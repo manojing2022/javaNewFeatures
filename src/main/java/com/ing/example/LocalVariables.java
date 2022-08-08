@@ -13,9 +13,9 @@ public class LocalVariables {
     System.out.println(x);
   }
 
-  var x;
+  var x;  //Not allowed as class fields
 
-  public LocalVariables(var param){
+  public LocalVariables(var param){ //Not allowed as parameter
 
   }
 
@@ -28,9 +28,9 @@ public class LocalVariables {
     var counter = 0;
     counter = counter + 1;
     var array = {1, 2, 3, 4};
-    var age;
+    var age; // not allowed uninitialized
 
-    var data = null;
+    var data = null; // not allowed null
 
     for ( var object : names){
       System.out.println( object );
@@ -47,11 +47,11 @@ public class LocalVariables {
     }
 
   }
-  public var demoMethod(){
+  public var demoMethod(){ //Not allowed in method return type
     return null;
   }
 
-  public Integer demoMethod2( var input ){
+  public Integer demoMethod2( var input ){ //Not allowed as parameter
       return null;
     }
 
