@@ -1,61 +1,57 @@
 package com.ing.example;
 
-import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.net.URL;
-import java.net.URLConnection;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class LocalVariables {
 
   static
   {
-    String x = "Hi there";
+    var x = "Hi there";
     System.out.println(x);
   }
 
-  Integer x;
+  var x;
 
-  public LocalVariables(int param){
+  public LocalVariables(var param){
 
   }
 
   public static void main(String[] args) throws IOException {
-    URL url = new URL("http://javamodularity.com");
-    URLConnection connection = url.openConnection();
-    Map<Integer, String> mapNames = new HashMap<>();
-    List<String> names = List.of("Julie", "Robert", "Chris", "Joseph");
+    var url = new URL("http://javamodularity.com");
+    var connection = url.openConnection();
+    var mapNames = new HashMap<>();
+    var names = List.of("Julie", "Robert", "Chris", "Joseph");
 
-    int counter = 0;
+    var counter = 0;
     counter = counter + 1;
-    Integer[] array = {1, 2, 3, 4};
-    int age;
+    var array = {1, 2, 3, 4};
+    var age;
 
-    String data = null;
+    var data = null;
 
-    for ( int object : array){
+    for ( var object : names){
       System.out.println( object );
     }
 
-    for ( int i = 0 ; i < array.length; i++ ){
-      System.out.println( array[i] );
+    for ( var i = 0 ; i < names.size(); i++ ){
+      System.out.println( names.get(i) );
     }
 
     try{
 
-    } catch(Exception ex){
+    } catch(var ex){
 
     }
 
   }
-  public String demoMethod(){
+  public var demoMethod(){
     return null;
   }
 
-  public Integer demoMethod2( int input ){
+  public Integer demoMethod2( var input ){
       return null;
     }
 
