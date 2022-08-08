@@ -2,8 +2,11 @@ package com.ing.example;
 
 import java.io.IOException;
 import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class LocalVariables {
 
@@ -22,8 +25,9 @@ public class LocalVariables {
   public static void main(String[] args) throws IOException {
     var url = new URL("http://javamodularity.com");
     var connection = url.openConnection();
-    var mapNames = new HashMap<>();
+    var mapNames = new HashMap<Integer,String>();
     var names = List.of("Julie", "Robert", "Chris", "Joseph");
+    var values = new ArrayList<String>();
 
     var counter = 0;
     counter = counter + 1;
@@ -55,4 +59,13 @@ public class LocalVariables {
       return null;
     }
 
+  void removeIfLonger(Map<? extends String, ? extends String> map, int maxLength) {
+
+    for (var iter = map.entrySet().iterator(); iter.hasNext();) {
+      var entry = iter.next();
+      if (entry.getValue().length() > maxLength) {
+        iter.remove();
+      }
+    }
+  }
 }
