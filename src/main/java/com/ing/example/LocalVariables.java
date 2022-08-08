@@ -5,11 +5,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.function.BiFunction;
 
 public class LocalVariables {
 
@@ -32,7 +34,6 @@ public class LocalVariables {
     List<String> names = List.of("Julie", "Robert", "Chris", "Joseph");
     List<String> values = new ArrayList<>();
 
-
     int counter = 0;
     counter = counter + 1;
     Integer[] array = {1, 2, 3, 4};
@@ -53,6 +54,11 @@ public class LocalVariables {
     } catch(Exception ex){
 
     }
+
+    var arrInteger = new Integer[]{5, 9, 3, 6, 2, 4, 8, 7, 1};
+    long cnt = Arrays.stream(arrInteger).filter(
+        x -> (x != null && x > 5)).count();
+    System.out.println(cnt);
 
   }
   public String demoMethod(){
