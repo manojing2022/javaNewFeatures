@@ -6,8 +6,10 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class LocalVariables {
 
@@ -28,6 +30,8 @@ public class LocalVariables {
     URLConnection connection = url.openConnection();
     Map<Integer, String> mapNames = new HashMap<>();
     List<String> names = List.of("Julie", "Robert", "Chris", "Joseph");
+    List<String> values = new ArrayList<>();
+
 
     int counter = 0;
     counter = counter + 1;
@@ -58,5 +62,16 @@ public class LocalVariables {
   public Integer demoMethod2( int input ){
       return null;
     }
+
+  void removeIfLonger(Map<? extends String, ? extends String> map, int maxLength) {
+
+    for (Iterator<? extends Entry<? extends String, ? extends String>> iter = map.entrySet().iterator(); iter.hasNext();) {
+
+      Map.Entry<? extends String, ? extends String> entry = iter.next();
+      if (entry.getValue().length() > maxLength) {
+        iter.remove();
+      }
+    }
+  }
 
 }
